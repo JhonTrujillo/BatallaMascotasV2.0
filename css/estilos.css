@@ -1,0 +1,144 @@
+/* css-tricks.com consulta propiedad flexbox */
+/* Paleta de colores colorhunt.co    */
+/* Font: font.google.com */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+body{
+    font-family: "Fredoka", sans-serif;
+    background: #041562;
+}
+
+#selecionar-mascota{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#titulo{
+    color: white;
+    text-align: center;
+    font-size: 32px;
+}
+
+#subtitulo{
+    color: white;
+    font-size: 20px;
+}
+
+.tarjetas{
+    display: flex;
+    gap: 10px; /*gap: espaciado en display:flex*/
+}
+
+.tarjeta-mascota{
+    width: 180px;
+    height: 100px;
+    background: #11468F;
+    padding: 10px;
+    box-sizing: border-box; /*la propiedad box-sizing: border-box no permite que la caja crezca con el padding*/
+    margin-top: 10px;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tarjeta-mascota img{
+    width: 80px;
+    border-radius: 20px;
+}
+
+input{
+    display: none; 
+}
+
+input:checked + label{
+    background: red;
+}
+
+button{
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 20px;
+    background: #11468F;
+    color: white;
+    font-family: "Fredoka", sans-serif;
+    font-size: 20px;
+}
+
+button:hover{
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+/* Estilo Section ataque */
+#selecionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+#btn-fuego{
+    background: rgb(228, 11, 11);
+    color: black;
+}
+
+#btn-agua{
+    background: aqua;
+    color: black
+}
+
+#btn-tierra{
+    background: chocolate;
+    color: black
+}
+
+#mensajes{
+    width: 180px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mensajes p{
+    font-size: 24px;
+    text-align: center;
+}
+
+.marcadores{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    text-align: center;
+}
+
+#tarjeta-jugador, #tarjeta-rival{
+    margin: 20px 10px 10px 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 20px;
+}
+
+/* Mediaquery */
+@media (max-width: 360px){
+    .tarjetas{
+        flex-direction: column;
+    }
+    .container-btn{
+        display: flex;
+        flex-direction: column;
+    }
+    .marcadores{
+        grid-template-columns: 200px;
+        text-align: center;
+    }
+}
