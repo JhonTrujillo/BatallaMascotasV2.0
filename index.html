@@ -8,49 +8,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Battle Pets!</title>
-    <script src="./js/index.js"></script> 
-    <script src="./js/mascotarival.js"></script>
-    <script src="./js/ataqueJugador.js"></script>
-    <script src="./js/ataqueRival.js"></script>
-    <script src="./js/mensaje.js"></script>
-    <script src="./js/combate.js"></script>
     <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
     <section id="selecionar-mascota">
         <h1 id="titulo">Batalla Mascotas 🔥💧☘️</h1>
         <h2 id="subtitulo">Elige tu mascota:</h2>
-        <div class="tarjetas">
-        <!-- squirtle -> Agua, bulbasaur -> Tierra, sharmander -> Fuego -->
-        <input type="radio" id="squirtle" name="mascota">
-        <label class="tarjeta-mascota" for="squirtle">
-            <p>Squirtle</p>
-            <img src="./img/squirtle.png" alt="Squirtle">
-        </label>
-        
-        <input type="radio" id="bulbasaur" name="mascota">
-        <label class="tarjeta-mascota" for="bulbasaur">
-           <p>Bulbasaur</p> 
-            <img src="./img/bulbasaur.png" alt="Bulbasaur">
-        </label>
-        
-        <input type="radio" id="sharmander" name="mascota">
-        <label class="tarjeta-mascota" for="sharmander">
-            <p>Sharmander</p>
-            <img src="./img/sharmander.png" alt="Sharmander">
-        </label>
-        
+
+        <div class="tarjetas" id="container-tarjetas">
         </div>
+
         <button id=btn-selecionar-mascota>Seleccionar</button>
     </section>
 
     <section id="selecionar-ataque">
         <h1 id="titulo">Batalla Mascotas 🔥💧☘️</h1>
         <h2 id="subtitulo">Elige tu ataque:</h2>
-        <div class="container-btn">
-            <button id="btn-fuego">Fuego 🔥</button>
+        <div id="containerAtaques">
+            <!-- <button id="btn-fuego">Fuego 🔥</button>
             <button id="btn-agua">Agua 💧</button>
-            <button id="btn-tierra">Tierra ☘️</button>
+            <button id="btn-tierra">Tierra ☘️</button> -->
         </div>
 
         <section id="mensajes">
@@ -72,5 +49,12 @@
             </section>
         </div>
     </section>
+    <script src="./js/index.js"></script> 
+    <script src="./js/mascotarival.js"></script>
+    <script src="./js/ataqueJugador.js"></script>
+    <script src="./js/ataqueRival.js"></script>
+    <script src="./js/mensaje.js"></script>
+    <script src="./js/combate.js"></script>
+    <script src="./js/classMascota.js"></script>
 </body>
 </html>
