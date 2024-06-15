@@ -1,5 +1,6 @@
 let opcionMascotas
 
+
 function iniciarJuego(){
 
     //oculta menu de ataque
@@ -63,50 +64,4 @@ function seleccionarMascotaJugador(){
     extraerAtaque(mascotaJugador)
     seleccionarMascotaRival() // despues de seleccionar nuestra mascota llamamos la funcion seleccionarMascotaRival
 }
-
-let ataques
-function extraerAtaque(mascotaJugador){
-    
-    for(let i=0; i < mascotas.length; i++){
-        if(mascotaJugador === mascotas[i].nombre){
-            ataques = mascotas[i].ataques
-        }
-    }
-   mostrarAtaques(ataques)
-}
-
-let contenedorAtaques = document.getElementById("containerAtaques")
-let ataquesMascota
-
-function mostrarAtaques(ataques){
-    ataques.forEach((ataque) => {
-        ataquesMascota = `
-        <button id=${ataque.id} >${ataque.nombre}
-        </button>
-        `
-        contenedorAtaques.innerHTML += ataquesMascota
-        } )
-        let botonFuego = document.getElementById("btn-fuego")
-    botonFuego.addEventListener("click", ataqueFuego)
-    let botonAgua = document.getElementById("btn-agua")
-    botonAgua.addEventListener("click", ataqueAgua)
-    let botonTierra = document.getElementById("btn-tierra")
-    botonTierra.addEventListener("click", ataqueTierra)
-
-}
-
-//Opcion 1 no recomendada selecionarMascotaJugador
-// function seleccionarMascotaJugador(){
-//     if (document.getElementById("squirtle").checked){
-//         alert("selecionaste a squiler")
-//     } else if(document.getElementById("bulbasaur").checked){
-//         alert("selecionaste a Bulbasaur")
-//     } else if(document.getElementById("sharmander").checked){
-//         alert("selecionaste a Sharmander")
-//     }else {
-//         alert("Selecciona una mascota")
-//     }
-// }
-
-
 window.addEventListener("load", iniciarJuego)//Se crea evento de carga de html

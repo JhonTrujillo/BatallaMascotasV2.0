@@ -1,39 +1,63 @@
-let vidasJugador = 3
-let vidasRival= 3
-
-function combate(){
-    let spanVidasJugador = document.getElementById("vidas-jugador")
-    let spanVidasRival = document.getElementById("vidas-rival")
-
-    if(ataqueRival == ataqueJugador){
-        crearMensaje(" EMPATE")
-     }else if(ataqueJugador == 'FUEGO' && ataqueRival == 'TIERRA'){
-        crearMensaje(" GANASTE")
-        vidasRival--
-        spanVidasRival.innerHTML = vidasRival
-    }else if(ataqueJugador == "AGUA" && ataqueRival == "FUEGO"){
-         crearMensaje(" GANASTE")
-         vidasRival--
-        spanVidasRival.innerHTML = vidasRival
-     }else if(ataqueJugador == "TIERRA" && ataqueRival == "AGUA"){
-        crearMensaje(" GANASTE")
-        vidasRival--
-        spanVidasRival.innerHTML = vidasRival
-    }else{
-        crearMensaje("PERDISTE")
-        vidasJugador--
-        spanVidasJugador.innerHTML = vidasJugador
+function iniciarCombate(){
+    if(ataqueJugador.length == 5){
+        // indexAmbosOponentes()
+        combate()
     }
-    revisarVidas()
 }
 
-function revisarVidas(){
-    if(vidasRival == 0){
-        // alert("Ganaste")
-        crearMensajeFinal("Ganaste !!!🥳🥳")
-    }else if(vidasJugador == 0){
-        // alert("Perdiste")
-        crearMensajeFinal("Lo siento, Perdiste 😒")
+let indexAtaqueJugador
+let indexAtaqueRival
+
+function indexAmbosOponentes(jugador, rival){
+    indexAtaqueJugador = ataqueJugador[jugador]
+    indexAtaqueRival = ataqueRival[rival]
+}
+
+ let victoriasJugador = 0
+ let victoriasRival = 0
+ let spanVictoriasJugador = document.getElementById("vidas-jugador")
+ let spanVictoriasRival = document.getElementById("vidas-rival")
+
+function combate(){
+    for(i=0; i < ataqueJugador.length; i++){
+        // console.log(ataqueJugador[i])
+        if(ataqueJugador[i] === ataqueRival[i]){
+            indexAmbosOponentes(i, i)
+            crearMensaje("EMPATE")
+        }else if(ataqueJugador[i] === "FUEGO" && ataqueRival[i] === "TIERRA"){
+            indexAmbosOponentes(i, i)
+            crearMensaje("GANASTE")
+            victoriasJugador++
+            spanVictoriasJugador.innerHTML = victoriasJugador
+        }else if(ataqueJugador[i] == "AGUA" && ataqueRival[i] == "FUEGO"){
+            indexAmbosOponentes(i, i)
+            crearMensaje("GANASTE")
+            victoriasJugador++
+            spanVictoriasJugador.innerHTML = victoriasJugador
+        }else if(ataqueJugador[i] == "TIERRA" && ataqueRival[i] == "AGUA"){
+            indexAmbosOponentes(i, i)
+            crearMensaje("GANASTE")
+            victoriasJugador++
+            spanVictoriasJugador.innerHTML = victoriasJugador
+        }else{
+            indexAmbosOponentes(i, i)            
+            crearMensaje("PERDISTE")
+            victoriasRival++
+            spanVictoriasRival.innerHTML = victoriasRival
+        }
+        }
+        revisarVictorias()
     }
+            
+function revisarVictorias(){
+    if(victoriasJugador === victoriasRival){
+        // alert("Ganaste")
+        crearMensajeFinal("Esto fue un empate !!!")
+     }else if(victoriasJugador > victoriasRival){
+         // alert("Perdiste")
+         crearMensajeFinal("Ganaste 🥳🥳 !!!")
+     }else{
+        crearMensajeFinal("Perdiste 😒😒 !!!")
+     }
 }
 

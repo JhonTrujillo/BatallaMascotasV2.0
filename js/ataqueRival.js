@@ -1,16 +1,22 @@
-let ataqueRival
+let ataqueRival = []
+
+
+//  function aleatorio(min, max){
+//      return Math.floor(Math.random() * (max - min +1) + min)
+//  }
 
 function ataqueAleatorioRival(){
-    let ataqueAleatorio  = aleatorio(1, 3)
+    let ataqueAleatorio  = aleatorio(0, ataquesMascotaRival.length -1)
 
-    if(ataqueAleatorio == 1){
-        ataqueRival = "FUEGO"
-    }else if(ataqueAleatorio == 2){
-        ataqueRival = "AGUA"
+    if(ataqueAleatorio == 0 || ataqueAleatorio == 1){
+        ataqueRival.push('FUEGO')
+    }else if(ataqueAleatorio == 3 || ataqueAleatorio == 4){
+        ataqueRival.push('AGUA')
     }else {
-        ataqueRival = "TIERRA"
+        ataqueRival.push('TIERRA')
 }
-combate()
+console.log(ataqueRival)
+iniciarCombate()
 }
 
 

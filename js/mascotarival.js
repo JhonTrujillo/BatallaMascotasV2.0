@@ -1,10 +1,14 @@
+let ataquesMascotaRival = []
 function seleccionarMascotaRival(){
     let mascotaAleatorio = aleatorio(0, mascotas.length -1)
     let spanMascotaRival = document.getElementById("mascota-rival") // Creamos variable para guardar seleccion del Span donde se insertara nuevo valor
     
     spanMascotaRival.innerHTML= mascotas[mascotaAleatorio].nombre
+    ataquesMascotaRival = mascotas[mascotaAleatorio].ataques
+    console.log(ataquesMascotaRival)
+    secuenciaAtaque()
 }
 
 function aleatorio(min, max){
-    return Math.floor(Math.random() * (max - min +1) + min)
-}
+     return Math.floor(Math.random() * (max - min +1  ) + min)
+ }

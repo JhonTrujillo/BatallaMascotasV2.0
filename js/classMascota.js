@@ -21,11 +21,11 @@ let sharmander = new Mascota("sharmander", './img/sharmander.png', 5)
 
 //6. llamamos el objeto con . selecionamos elemento ataque y con .push agregamos el ataque al arreglo
 squirtle.ataques.push(
-    {nombre: "💧", id:"btn-agua"},
-    {nombre: "💧", id:"btn-agua"},
-    {nombre: "💧", id:"btn-agua"},
-    {nombre: "🔥", id:"btn-fuego"},
-    {nombre: "☘️", id:"btn-tierra"}
+    {nombre: "💧" , id:"btn-agua"},
+    {nombre: "💧" , id:"btn-agua"},
+    {nombre: "💧" , id:"btn-agua"},
+    {nombre: "🔥" , id:"btn-fuego"},
+    {nombre: "☘️" , id:"btn-tierra"}
 )
 
 bulbasaur.ataques.push(
